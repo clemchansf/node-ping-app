@@ -1,0 +1,24 @@
+{
+  "name": "node-ping-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ping.js",
+  "scripts": {
+    "start": "node ./ping.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clemchansf/node-ping-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clemchansf/node-ping-app/issues"
+  },
+  "homepage": "https://github.com/clemchansf/node-ping-app#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "log4js": "^3.0.6"
+  }
+}
