@@ -7,8 +7,17 @@ log4js.configure({
 var logger = log4js.getLogger('ubuntu');
 var axios = require('axios');
 
+function forceGC() {
+   if (global.gc) {
+      global.gc();
+   } else {
+      logger.warn('No GC hook! Start your program as `node --expose-gc file.js`.');
+   }
+}
+
 function startKeepAlive() {
     setInterval(async () => {
+	forceGC();
         let res;
         try {
             res = await axios.get('https://warm-garden-52058.herokuapp.com/api/posts');
@@ -21,6 +30,7 @@ function startKeepAlive() {
             logger.error(err);
         }
     }, 20 * 60 * 1000); // load every 20 minutes
+    //}, 15000); // load every 20 minutes
 }
 
 startKeepAlive();

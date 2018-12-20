@@ -4,6 +4,7 @@
   "description": "",
   "main": "ping.js",
   "scripts": {
+    "startgc": "node --expose-gc ./ping.js",
     "start": "node ./ping.js"
   },
   "repository": {
